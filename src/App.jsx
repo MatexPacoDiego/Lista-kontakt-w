@@ -1,5 +1,5 @@
-import { Person } from "./compoments/Person/Person.jsx";
-import { Form } from "./compoments/Form/Form.jsx";
+import { Person } from "./components/Person/Person.jsx";
+import { Form } from "./components/Form/Form.jsx";
 import { useState } from "react";
 import "./App.css";
 
