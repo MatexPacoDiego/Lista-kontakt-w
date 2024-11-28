@@ -1,8 +1,7 @@
-import { Tel } from "./Tel";
 import { useState } from "react";
 import "./Person.css";
 
-export const Person = (props) => {
+export const Person = ({ name, tel, city }) => {
   const [showMore, setShowMore] = useState(false);
 
   function MoveText() {
@@ -10,15 +9,15 @@ export const Person = (props) => {
   }
   return (
     <li className={showMore ? "active" : ""}>
-      <h2>{props.name}</h2>
+      <h2>{name}</h2>
 
       <button onClick={MoveText}>{showMore ? "Ukryj" : "Pokaż"}</button>
       {showMore && (
         <>
           <h3>
-            Telefon: <Tel tel={props.tel} />
+            Telefon: <a href={tel}>{tel}</a>
           </h3>
-          <h3>Miasto: {props.city}</h3>
+          <h3>Miasto: {city}</h3>
         </>
       )}
     </li>

@@ -1,9 +1,9 @@
-import { Person } from "./commpoments/Person.jsx";
-import { Form } from "./commpoments/Form.jsx";
+import { Person } from "./compoments/Person/Person.jsx";
+import { Form } from "./compoments/Form/Form.jsx";
 import { useState } from "react";
 import "./App.css";
 
-const person = [
+const contacts = [
   {
     name: "Filip",
     tel: 666555222,
@@ -18,30 +18,30 @@ const person = [
 
 export default function App() {
   const [addPerson, setAddPerson] = useState(false);
-  const [peolpe, setPeople] = useState(person);
-  const AddPerson = () => {
+  const [people, setPeople] = useState(contacts);
+  const increasePerson = () => {
     setAddPerson(true);
   };
 
-  const AddNewPerson = (data) => {
-    const newPeople = [...person, data];
+  const addNewPerson = (data) => {
+    const newPeople = [...contacts, data];
     setPeople(newPeople);
   };
   return (
     <>
       <h1>Lista kontaktów</h1>
       {addPerson ? (
-        <Form onAddNewPerson={AddNewPerson} />
+        <Form onAddNewPerson={addNewPerson} />
       ) : (
-        <button onClick={AddPerson}>Dodaj</button>
+        <button onClick={increasePerson}>Dodaj</button>
       )}
       <ul>
-        {peolpe.map((peolpe) => (
+        {people.map((people) => (
           <Person
-            key={peolpe.tel}
-            name={peolpe.name}
-            tel={peolpe.tel}
-            city={peolpe.city}
+            key={people.tel}
+            name={people.name}
+            tel={people.tel}
+            city={people.city}
           />
         ))}
       </ul>
