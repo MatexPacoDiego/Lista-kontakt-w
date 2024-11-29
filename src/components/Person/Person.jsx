@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Person.css";
+import styles from "./Person.module.css";
 
 export const Person = ({ name, tel, city }) => {
   const [showMore, setShowMore] = useState(false);
@@ -8,7 +8,7 @@ export const Person = ({ name, tel, city }) => {
     setShowMore(!showMore);
   }
   return (
-    <li className={showMore ? "active" : ""}>
+    <li className={showMore ? styles.active : ""}>
       <h2>{name}</h2>
 
       <button onClick={MoveText}>{showMore ? "Ukryj" : "Pokaż"}</button>
