@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Form.css";
+import styles from "./Form.module.css";
 
 export const Form = ({ onAddNewPerson }) => {
   const [name, setName] = useState("");
@@ -14,6 +14,7 @@ export const Form = ({ onAddNewPerson }) => {
     >
       <div>
         <input
+          className={styles.input}
           type="text"
           defaultValue={name}
           name="name"
@@ -25,6 +26,7 @@ export const Form = ({ onAddNewPerson }) => {
       </div>
       <div>
         <input
+          className={styles.input}
           type="tel"
           defaultValue={tel}
           name="tel"
@@ -36,6 +38,7 @@ export const Form = ({ onAddNewPerson }) => {
       </div>
       <div>
         <input
+          className={styles.input}
           type="text"
           defaultValue={city}
           name="city"
